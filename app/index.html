@@ -1,25 +1,22 @@
-<html>
-    <head>
-        <link rel="stylesheet" href="/assets/css/style.css">
-    </head>
+<html ng-app="distribuidora">
 
+<head>
+    <base href="/">
+    <meta charset="UTF-8">
+    <title>Distribuidora</title>
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/_lib/angular.min.js"></script>
+    <script src="assets/js/_lib/angular-route.min.js"></script>
+    <script src="assets/js/controller/produto-controller.js"></script>
+</head>
     <body>
-        <div class="main-menu one">
-            <h1 class="main-menu-text"> tutti-buono</h1>
-            <ul class="main-menu-navbar">
-                <li class="main-menu-navbar-itens"> <a class="main-menu-navbar-itens-text" href="#home">Home</a> </li>
-                <li class="main-menu-navbar-itens"> <a class="main-menu-navbar-itens-text" href="#cadastro">Cadastro</a> </li>
-                <li class="main-menu-navbar-itens"> <a class="main-menu-navbar-itens-text" href="#">Compras</a> </li>
-                <li class="main-menu-navbar-itens"> <a class="main-menu-navbar-itens-text" href="">Abacaxi</a> </li>
-            </ul>
-        </div>
-        <div class="container"> 
-            <form class="form">
-                <div class="form-title">Cadastro de tipo</div>
-                <label> Tipo </label>
-                <input type=""> 
-                <input type="submit">
-            </form>
+        <!-- chamada do header -->
+        <ng-view></ng-view>
+        <div class="container">
+
+
         </div>
     </body>
 </html>
