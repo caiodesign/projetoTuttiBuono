@@ -1,0 +1,14 @@
+.DS_Store
+node_modules
+.sass-cache
+dist
+*yarn*
+
+# Editor directories and files
+.vscode
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+
+data
