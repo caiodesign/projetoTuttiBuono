@@ -5,9 +5,12 @@ angular.module('distribuidora', ['ngRoute'])
     $locationProvider.html5Mode(true); 
     
     $routeProvider.when('/home', {
-        templateUrl: 'partials/principal.html',
+        //headerUrl: xxxxxx,
+        //footer: xxxxxx,
+        //view:xxxx,
+        templateUrl: 'views/components/cadastro.html',
         controller: 'FotosController'
     });
 
     $routeProvider.otherwise({redirectTo: '/home'});
-});
+}); 
