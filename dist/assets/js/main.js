@@ -1,0 +1,1 @@
+angular.module("distribuidora",["ngRoute"]).config(function($routeProvider){$locationProvider.html5Mode(!0),$routeProvider.when("/home",{templateUrl:"views/components/cadastro.html",controller:"FotosController"}),$routeProvider.otherwise({redirectTo:"/home"})});
