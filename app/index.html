@@ -1,4 +1,4 @@
-<html ng-app="distribuidora">
+<html ng-app="app">
 
 <head>
     <base href="/">
@@ -6,19 +6,35 @@
     <title>Distribuidora</title>
     <meta name="viewport" content="width=device-width">
     <link rel="stylesheet" href="/assets/css/style.css">
-    <script src="assets/js/main.js"></script>
-    <script src="assets/js/_lib/angular.min.js"></script>
-    <script src="assets/js/_lib/angular-route.min.js"></script>
-    <script src="assets/js/controller/produto-controller.js"></script>
+    <!-- LIBS -->
+    <script src="/assets/js/_lib/angular.js"></script>
+    <script src="/assets/js/_lib/angular-ui-router.js"></script>
+    <script src="/assets/js/_lib/angular-route.min.js"></script>
+
+    <!-- APP -->
+    <script src="/assets/js/module.js"></script>
+    <script src="/assets/js/route.js"></script>
+
+    <!-- CONTROLLER -->
+    <script src="/assets/js/controller/produto-controller.js"></script>
 </head>
-    <body>
-        <!-- chamada do header -->
-        <ng-view></ng-view>
-        <div class="container">
+
+<body>
+    <!-- chamada do header -->
+    <header ui-view="header">
+    </header>
+
+    <main ui-view="main">
+    </main>
+
+    <footer ui-view="footer">
+    </footer>
+    <!--  <div class="container">
             <h1>estou vivo</h1>
             <img src="https://1.bp.blogspot.com/-5cSoAm2lMTU/V4glfxQc2rI/AAAAAAAAG_I/yFqFoQM6uQcitw6OgfOhDPIxHypEUxFKQCEw/s1600/kvothe_meets_haliax___name_of_the_wind_by_bradsuttonart-d7e2u4h.jpg" alt="">
         </div>
-    </body>
-</html>
+    -->
+</body>
 
+</html>
 <!--teste -->
