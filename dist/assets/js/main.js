@@ -1,1 +1,0 @@
-app.config(["$stateProvider","$urlRouterProvider","$locationProvider",function($stateProvider,$urlRouterProvider,$locationProvider){$urlRouterProvider.otherwise("/home"),$locationProvider.html5Mode(!0).hashPrefix("!"),$stateProvider.state("home",createRoute("home","principals/header","princials/footer","home/homeView"))}]);
