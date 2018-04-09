@@ -6,23 +6,23 @@ app.config(['$stateProvider', '$urlRouterProvider', '$locationProvider', functio
     $stateProvider
         .state('home', createRoute(
             'home', //APP URL
-            'principals/header', //HEADER VIEW LOCATION
+            'principals/header/header', //HEADER VIEW LOCATION
             'principals/footer', //FOOTER VIEW LOCATION
             'complete/home-view' //MAIN VIEW LOCATION
             
         ))
         .state('cadastro', createRoute(
             'cadastro', //APP URL
-            'principals/header', //HEADER VIEW LOCATION
+            'principals/header/header', //HEADER VIEW LOCATION
             'principals/footer', //FOOTER VIEW LOCATION
             'components/cadastro' //MAIN VIEW LOCATION
             
         ))
         .state('lixo', createRoute(
             'lixo', //APP URL
-            'principals/header', //HEADER VIEW LOCATION
+            'principals/header/header', //HEADER VIEW LOCATION
             'principals/footer', //FOOTER VIEW LOCATION
-            'components/testegrid' //MAIN VIEW LOCATION
+            'components/post' //MAIN VIEW LOCATION
             
         ));
 }]);
