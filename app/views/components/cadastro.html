@@ -1,4 +1,47 @@
-<form class="form">
-    <input type="text" placeholder="Tipo...">
-    <input type="submit" value="Salvar">
-</form> 
+<div class="cadastro-tipo">
+    <div class="cadastro-titulo">
+        Tipo
+    </div>
+    <form class="form">
+        <input type="text" placeholder="Digite...">
+        <input type="submit" value="Salvar">
+    </form> 
+</div>
+<br>
+
+<div class="cadastro-produto">
+        <div class="cadastro-produto-titulo">
+            Cadatrar Produto
+        </div>
+        <form class="form">
+            <input type="text" placeholder="Selecione...">
+            <input type="text" placeholder="Selecione...">
+            <input type="text" placeholder="Selecione...">
+            <input type="submit" value="Salvar">
+        </form> 
+        <div class="lista-tipo">
+
+        </div>
+        <div class="popup is-theme-bondi-blue">
+                <div class="popup-title">
+                    <div>
+                        <span>Escolha o sabor</span>
+                       
+                    </div>
+                </div>
+                <div class="popup-body">
+                    <!-- inicia repeticao-->
+                    <div class="body-row"  ng-repeat="card in sabor">
+                        <div>
+                           <span>Sabor</span>
+                        </div>
+                     <!-- termina repeticao-->
+                </div>
+                <div class="popup-action">
+                    <div class="text-center">
+                        <a href="#" class="button-text is-theme-black">Ver todos os comunicados</a>
+                    </div>
+                </div>
+            </div>
+        
+    </div>

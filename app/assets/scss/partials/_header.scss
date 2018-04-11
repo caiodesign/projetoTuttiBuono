@@ -1,7 +1,3 @@
-* {
-    box-sizing: border-box;
-}
-
 .main-menu {
     width: 100%;
     margin-top: 0;
@@ -12,10 +8,7 @@
     background-color: #1d67a3;
     padding: 20px;
     position: relative;
-    @media screen and (max-width: 784px) {
-        display: block;
-    }
-    @media screen and (max-width: 490px) {
+    @media screen and (max-width: $tablet) {
         display: block;
     }
     .main-menu-navbar {
@@ -23,7 +16,7 @@
         list-style-type: none;
         margin-left: 30px;
         padding: 0;
-        @media screen and (max-width: 784px) {
+        @media screen and (max-width: $tablet) {
             display: none;
         }
     }
@@ -33,7 +26,7 @@
     .main-menu-navbar-itens-text {
         font-size: 18px;
         margin-right: 25px;
-        font-family: Museo, Arial;
+        font-family: font;
         color: white;
         text-decoration: none;
     }
@@ -42,22 +35,22 @@
     }
     .main-menu-text {
         font-size: 40px;
-        font-family: Museo, Arial;
+        font-family: font;
         margin-left: 15px;
         color: white;
         height: auto;
-        @media screen and (max-width: 784px) {
+        @media screen and (max-width: $tablet) {
             text-align: right;
         }
     }
-    @media screen and (max-width: 784px) {
+    @media screen and (max-width: $tablet) {
         background-color: red;
     }
 }
 
 .menu-sadwich {
     display: none;
-    @media screen and (max-width: 784px) {
+    @media screen and (max-width: $tablet) {
         display: block;
         position: absolute;
         background-color: red;
@@ -151,7 +144,7 @@
     .menu-back {
         font-size: 18px;
         margin-right: 25px;
-        font-family: Museo, Arial;
+        font-family: font;
         text-transform: uppercase;
         list-style-type: none;
         padding: 15px;
