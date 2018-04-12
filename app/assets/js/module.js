@@ -1,16 +1,16 @@
 var app = angular.module("app", ['ui.router']);
 
-var createRoute = function (URL, HEADER, FOOTER, MAIN, CONTROLLER) {
+var createRoute = function (URL, HEADER, FOOTER, MAIN, mainController) {
     return {
         url: '/' + URL,
         views: {
             'header': {
                 templateUrl: '../views/' + HEADER + '.html',
-                controller:  CONTROLLER
+                controller: mainController
             },
             'main': {
                 templateUrl: '../views/' + MAIN + '.html',
-                controller: CONTROLLER
+                controller: mainController
             },
             'footer': {
                 templateUrl: '../views/' + FOOTER + '.html',
