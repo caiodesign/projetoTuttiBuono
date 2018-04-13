@@ -1,1 +1,0 @@
-angular.module("app").controller("ProdutoController",["$scope","$timeout","$http",function($scope,$timeout,$http){}]);

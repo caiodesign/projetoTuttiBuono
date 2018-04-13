@@ -1,20 +1,27 @@
-var path = require('path');
-var gulp = require('gulp');
-var del = require('del');
-var clean = require('gulp-clean');
-var minifycss = require('gulp-minify-css');
-var browserSync = require('browser-sync');
-var watch = require('gulp-watch');
-var plumber = require('gulp-plumber');
-var compass = require('gulp-compass');
-var cleanCSS = require('gulp-clean-css');
-var uglify = require('gulp-uglify');
-var htmlmin = require('gulp-htmlmin');
-var historyFallback = require('connect-history-api-fallback');
+var path = require('path'),
+    gulp = require('gulp'),
+    del = require('del'),
+    clean = require('gulp-clean'),
+    minifycss = require('gulp-minify-css'),
+    browserSync = require('browser-sync'),
+    watch = require('gulp-watch'),
+    plumber = require('gulp-plumber'),
+    compass = require('gulp-compass'),
+    cleanCSS = require('gulp-clean-css'),
+    uglify = require('gulp-uglify'),
+    htmlmin = require('gulp-htmlmin'),
+    historyFallback = require('connect-history-api-fallback'),
+    concat = require('gulp-concat');
+
+// Error
+function onError(err) {
+    console.log(err);
+    this.emit('end');
+}
 
 var config = {
     app: './app',
-    build: './dist',
+    build: './proj',
 };
 
 config
@@ -24,7 +31,7 @@ config
         sass: [config.app + '/assets/scss/**/*.scss'],
         img: [config.app + '/assets/img/**/*'],
         fonts: [config.app + '/assets/fonts/*.{eot,svg,ttf,woff,woff2}'],
-        json: [config.app + '/assets/json/**/*.json']
+        json: [config.app + '/**/*.json']
     };
 
 config
@@ -47,8 +54,7 @@ gulp.task('img', function () {
         .pipe(gulp.dest(config.dest.img));
 });
 
-// Scripts
-gulp.task('js', function () {
+/*gulp.task('js', function () {
     return gulp.src(config.src.js)
         .pipe(plumber({
             errorHandler: function (error) {
@@ -60,11 +66,16 @@ gulp.task('js', function () {
             mangle: false
         }))
         .pipe(gulp.dest(config.dest.js));
-});
+});*/
 
-gulp.task('json', function() {
-    return gulp.src(config.src.json)
-        .pipe(gulp.dest(config.dest.json));
+gulp.task('json', function () {
+    return gulp.src([
+        config.app + '/components/views/paciente/doencas-relacionadas/doencasRelacionadas.json',
+        config.app + '/components/views/medico/manifestacoes-extra-hepaticas/manifestacoesExtraHepaticas.json',
+        config.app + '/components/views/paciente/duvidas-frequentes/duvidasFrequentes.json',
+        config.app + '/components/views/medico/links-importantes/linksImportantes.json'
+    ])
+        .pipe(gulp.dest(config.build + '/assets/json'));
 });
 
 gulp.task('html', function () {
@@ -75,6 +86,33 @@ gulp.task('html', function () {
         }))
         .pipe(gulp.dest(config.dest.html));
 });
+
+// Scripts
+gulp.task('js', function () {
+    return gulp.src([
+        config.app + '/assets/js/_lib/angular.js',
+        config.app + '/assets/js/_lib/angular-ui-router.js',
+        config.app + '/assets/js/_lib/angular-route.min.js',        
+        config.app + '/assets/js/_lib/jquery.min.js',
+        config.app + '/assets/js/_lib/slick.min.js',
+        config.app + '/assets/js/functions/*.js',
+
+    ])
+        .pipe(gulp.dest(config.build + '/assets/js'));
+});
+
+gulp.task('js-concat', function () {
+    return gulp.src([
+        config.app + '/assets/js/module.js',
+        config.app + '/assets/js/routes.js',
+        config.app + '/assets/js/controller/**/*.js'
+    ])
+        .pipe(concat('scripts.min.js'))
+        .pipe(uglify())
+        .on('error', onError)
+        .pipe(gulp.dest(config.build + '/assets/js'));
+});
+
 
 gulp.task('watch', function () {
     function checkDelete(file) {
@@ -100,7 +138,7 @@ gulp.task('watch', function () {
         gulp.start('js-watch');
     });
 
-    var jsonWatch = watch(config.src.json, {events:['add', 'change', 'unlink', 'unlinkDir']}, function(file){
+    var jsonWatch = watch(config.src.json, { events: ['add', 'change', 'unlink', 'unlinkDir'] }, function (file) {
         checkDelete(file);
         gulp.start('json-watch');
     });
@@ -142,13 +180,13 @@ gulp.task('delete', function () {
     ]);
 });
 
-gulp.task('js-watch', ['js'], browserSync.reload);
+gulp.task('js-watch', ['js', 'js-concat'], browserSync.reload);
 gulp.task('images-watch', ['img'], browserSync.reload);
 gulp.task('fonts-watch', ['fonts'], browserSync.reload);
 gulp.task('html-watch', ['html'], browserSync.reload);
 gulp.task('json-watch', ['json'], browserSync.reload);
 
-gulp.task('files', ['fonts', 'img', 'js', 'sass', 'html', 'json']);
+gulp.task('files', ['fonts', 'img', 'js', 'js-concat', 'sass', 'html', 'json']);
 
 gulp.task('server', ['delete', 'files', 'watch'], function () {
     browserSync.init({
