@@ -49,25 +49,17 @@ gulp.task('img', function () {
 
 // Scripts
 gulp.task('js', function () {
-    return gulp.src([
-        config.app + '/assets/libs/angular.js',
-        config.app + '/assets/libs/angular-ui-router.js',
-        config.app + '/assets/libs/jquery.min.js',
-        config.app + '/assets/libs/slick.min.js',
-        ])
-        .pipe(gulp.dest(config.build + '/assets/js'));
-});
-
-gulp.task('js-concat', function () {
-    return gulp.src([
-        config.app + '/app.module.js',
-        config.app + '/app.routes.js',
-        config.app + '/components/**/*.js'
-    ])
-        .pipe(concat('scripts.min.js'))
-        .pipe(uglify())
-        .on('error', onError)
-        .pipe(gulp.dest(config.build + '/assets/js'));
+    return gulp.src(config.src.js)
+        .pipe(plumber({
+            errorHandler: function (error) {
+                console.log(error.message);
+                this.emit('end');
+            }
+        }))
+        .pipe(uglify({
+            mangle: false
+        }))
+        .pipe(gulp.dest(config.dest.js));
 });
 
 gulp.task('json', function() {
