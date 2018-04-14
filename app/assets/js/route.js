@@ -17,7 +17,7 @@ app.config(['$stateProvider', '$urlRouterProvider', '$locationProvider', functio
             'principals/header/header', //HEADER VIEW LOCATION
             'principals/footer', //FOOTER VIEW LOCATION
             'components/cadastro', //MAIN VIEW LOCATION
-            'controller/produto-controller' //MAIN CONTROLLER
+            'ProdutoController' //MAIN CONTROLLER
         ))
         .state('lixo', createRoute(
             'lixo', //APP URL

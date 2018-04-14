@@ -70,10 +70,7 @@ gulp.task('img', function () {
 
 gulp.task('json', function () {
     return gulp.src([
-        config.app + '/components/views/paciente/doencas-relacionadas/doencasRelacionadas.json',
-        config.app + '/components/views/medico/manifestacoes-extra-hepaticas/manifestacoesExtraHepaticas.json',
-        config.app + '/components/views/paciente/duvidas-frequentes/duvidasFrequentes.json',
-        config.app + '/components/views/medico/links-importantes/linksImportantes.json'
+        config.app + '/assets/json/*.json'
     ])
         .pipe(gulp.dest(config.build + '/assets/json'));
 });
@@ -105,7 +102,7 @@ gulp.task('js-concat', function () {
     return gulp.src([
         config.app + '/assets/js/module.js',
         config.app + '/assets/js/route.js',
-        config.app + '/assets/js/controller/**/*.js'
+        config.app + '/assets/js/controller/*.js'
     ])
         .pipe(concat('scripts.min.js'))
         .pipe(uglify())
