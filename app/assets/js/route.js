@@ -1,4 +1,5 @@
 app.config(['$stateProvider', '$urlRouterProvider', '$locationProvider', function ($stateProvider, $urlRouterProvider, $locationProvider) {
+    console.log("1");
 
     $urlRouterProvider.otherwise('/home');
     $locationProvider.html5Mode(true).hashPrefix('!')
@@ -6,7 +7,7 @@ app.config(['$stateProvider', '$urlRouterProvider', '$locationProvider', functio
     $stateProvider
         .state('home', createRoute(
             'home', //APP URL
-            'principals/header/header', //HEADER VIEW LOCATION
+            'principals/header/header', //HEADER VIEW LOCATI ON
             'principals/footer', //FOOTER VIEW LOCATION
             'complete/home-view' //MAIN VIEW LOCATION
             

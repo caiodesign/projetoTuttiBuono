@@ -104,7 +104,7 @@ gulp.task('js', function () {
 gulp.task('js-concat', function () {
     return gulp.src([
         config.app + '/assets/js/module.js',
-        config.app + '/assets/js/routes.js',
+        config.app + '/assets/js/route.js',
         config.app + '/assets/js/controller/**/*.js'
     ])
         .pipe(concat('scripts.min.js'))

@@ -1,6 +1,7 @@
 var app = angular.module("app", ['ui.router']);
-
-var createRoute = function (URL, HEADER, FOOTER, MAIN, mainController) {
+var createRoute = function (URL, HEADER, FOOTER, MAIN, mainController) {    
+console.log("criou rota");
+    
     return {
         url: '/' + URL,
         views: {
