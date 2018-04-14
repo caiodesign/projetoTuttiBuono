@@ -26,7 +26,7 @@
     .main-menu-navbar-itens-text {
         font-size: 18px;
         margin-right: 25px;
-        font-family: font;
+        font-family: $font;
         color: white;
         text-decoration: none;
     }
@@ -35,7 +35,7 @@
     }
     .main-menu-text {
         font-size: 40px;
-        font-family: font;
+        font-family: $font;
         margin-left: 15px;
         color: white;
         height: auto;
@@ -144,7 +144,7 @@
     .menu-back {
         font-size: 18px;
         margin-right: 25px;
-        font-family: font;
+        font-family: $font;
         text-transform: uppercase;
         list-style-type: none;
         padding: 15px;

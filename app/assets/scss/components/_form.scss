@@ -1,24 +1,24 @@
 .cadastro-tipo {
-    border: 1px solid black;
+    border: 1px solid #1d3ca3 ;
     display: inline-block;
     .cadastro-titulo{
-        width: 100%;
-        display: block;
-        background-color: #000;
-        color: #fff;
-        text-transform: uppercase;
-        text-align: center;
+        display: inline-block;
+        color: #16350a;
+        text-align: left;
         padding: 5px;
+        font-family: $font;
+        font-size: 140%;    
+        
 
     }
     .form {
+        font-family: $font;
         grid-area: main;
         width: 100%;
         display: flex;
         flex-direction: column;
         font-family: $font;
-        align-items: center;
-        justify-content: center;
+        margin-left: 5px;
         input[type="submit"] {
             margin-top: 10px;
             padding: 8px;
@@ -33,21 +33,22 @@
         }
         input {
             margin-top: 10px;
-            width: 50%;
+            width: 80%;
             transition: width 1s;
             border: 1px solid blue;
         }
         input:focus {
-            width: 80%;
             border: 1px solid green;
+            box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19)
         }
         input:hover {
-            width: 80%;
             border: 1px solid green;
+            box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
+            filter:brightness(115%);
         }
         input[type="submit"]:hover {
             filter:brightness(110%);
-            box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
+            border: 0;  
             
         }   
     }
