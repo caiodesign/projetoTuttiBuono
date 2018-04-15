@@ -104,3 +104,29 @@
         // }
     }
 }
+.container {
+    padding: 0;
+}
+.grid-side{
+    display: grid;
+    width: 100%;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    grid-template-areas:
+    "left mid right";
+    .left-side{
+        grid-area: left;
+        height: 200px;
+        background-color: green;
+    }   
+    .mid-side{
+        grid-area: mid;
+        height:200px;
+        background-color: blue;
+    }
+    .right-side{
+        grid-area: right;
+        height: 200px;
+        background-color: gold;
+    }
+}
