@@ -3,7 +3,7 @@
     display: block;
     margin-top: 30px;
     width: 50%;
-    .cadastro-produto-titulo{
+    .cadastro-produto-titulo {
         width: 100%;
         display: block;
         background-color: #000;
@@ -11,7 +11,6 @@
         text-transform: uppercase;
         text-align: center;
         padding: 5px;
-
     }
     .form {
         grid-area: main;
@@ -46,18 +45,15 @@
             border: 1px solid green;
         }
         input[type="submit"]:hover {
-            filter:brightness(110%);
+            filter: brightness(110%);
             box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
-            
-        }   
+        }
     }
     .popup {
         width: 350px;
         border-radius: 5px;
-        overflow: hidden;
-        // box-shadow: 0px 10px 9px 0px rgba(0, 0, 0, 0.14);
-      
-        > .popup-title {
+        overflow: hidden; // box-shadow: 0px 10px 9px 0px rgba(0, 0, 0, 0.14);
+        >.popup-title {
             font-size: 14px;
             padding: 22px 25px;
             background-color: #000;
@@ -67,72 +63,132 @@
             text-transform: uppercase;
             .img-placeholder {
                 position: absolute;
-                right: 25px;
-      //          @include align('vertical');
+                right: 25px; //          @include align('vertical');
                 width: initial;
                 height: initial;
                 opacity: .5;
             }
         }
-        > .popup-body {
+        >.popup-body {
             max-height: 50vh;
             overflow: auto;
             position: relative;
             z-index: 9;
-            > .body-row {
+            >.body-row {
                 padding: 20px 25px 10px;
-                background-color: #eee;
-              //  @include transition(background);
+                background-color: #eee; //  @include transition(background);
                 &:nth-child(odd) {
                     //background-color: color('alabaster');
                 }
                 &:hover {
-                   // background-color: darken(color('alabaster'), 3%);
+                    // background-color: darken(color('alabaster'), 3%);
                 }
             }
         }
-        > .popup-action {
+        >.popup-action {
             background-color: #fff;
             padding: 22px 25px;
             position: relative;
             z-index: 9;
-        }
-        // @include theme {
+        } // @include theme {
         //     > .popup-title {
         //       //  background-color: $color;
         //     }
         // }
     }
 }
+
 .container {
     padding: 0;
 }
-.grid-side{
+
+.main-title {
+    padding: 10px;
+    color: #2585d3
+}
+
+.grid-side {
     display: flex;
     width: 100%;
     flex-grow: 0;
-    transition: width 10s;
-    .left-side{
-        height: 200px;
-        background-color: black;
-    }   
-    .mid-side{
-        height:200px;
-        background-color: blue;
+    .left-side {
+        height: 30vh;
+        background-color: green;
+        position: relative;
+        flex-grow: 1;
+        .sizeup-button {
+            border: .5px solid rgba(0, 0, 0, 0.158);
+            background-color: floralwhite;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            text-transform: uppercase;
+            font-family: $font;
+            font-size: 20px;
+            padding: 5px;
+            width: 100%;
+            bottom: 0;
+            color: green;
+            text-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
+        }
     }
-    .right-side{
-        height: 200px;
+    .mid-side {
+        height: 30vh;
+        background-color: blue;
+        position: relative;
+        flex-grow: 1;
+        .sizeup-button {
+            border: .5px solid rgba(0, 0, 0, 0.158);
+            background-color: floralwhite;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            text-transform: uppercase;
+            font-family: $font;
+            font-size: 20px;
+            padding: 5px;
+            width: 100%;
+            bottom: 0;
+            color: green;
+            text-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
+        }
+    }
+    .right-side {
+        height: 30vh;
         background-color: gold;
+        position: relative;
+        flex-grow: 1;
+        .sizeup-button {
+            border: .5px solid rgba(0, 0, 0, 0.158);
+            background-color: floralwhite;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            text-transform: uppercase;
+            font-family: $font;
+            font-size: 20px;
+            padding: 5px;
+            width: 100%;
+            bottom: 0;
+            color: green;
+            text-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
+        }
     }
     .sizeup {
-        flex-grow: 1;
-        //transition: all 800ms cubic-bezier(0.250, 0.250, 1.000, 1.650); /* custom */
-        -webkit-transition: width 10s;
-        transition: width 10s;
+        transition: flex-grow 500ms cubic-bezier(0.160, 1.530, 0.590, 1.395);
+        /* custom */
     }
-    .sizeup:hover{
-        width: 70%;
-         /* custom */
+    .sizeup:focus {
+        filter: brightness(110%);
+        box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
+        flex-grow: 3;
+        /* custom */
     }
-
+    .sizeup-button:hover {
+        filter: brightness(110%);
+        
+    }
 }
