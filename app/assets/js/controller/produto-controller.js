@@ -1,7 +1,5 @@
 angular.module('app').controller('ProdutoController', ['$scope', '$timeout', '$http',function ($scope, $timeout, $http) {
 
-    
-
     // GET JSON 'doencasRelacionadas'
     $http.get("/assets/json/sabor.json")
     .then(function(response) {
@@ -32,4 +30,10 @@ angular.module('app').controller('ProdutoController', ['$scope', '$timeout', '$h
         }
     }
 
+    $('.sizeup-button').on('click', function(){
+        $('div:even').removeClass('sizeup');
+        $('div:odd').removeClass('suma');
+        $(this).parent().parent().addClass("sizeup");
+        $(this).addClass('suma');
+    })
 }])
