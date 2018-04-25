@@ -1,3 +1,17 @@
 $tablet: 824px;
 
 $font: Roboto, sans-serif;
+
+$colors: black, green, blue, gold, white, gray, purple;
+
+@each $color in $colors {
+    .bgcolor-#{$color} {
+        background-color: $color !important;
+    }
+}
+
+@each $color in $colors {
+    .color-#{$color} {
+        color: $color !important;
+    }
+}

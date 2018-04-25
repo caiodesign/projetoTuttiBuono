@@ -1,17 +1,17 @@
 <!--
-<div class="cadastro-tipo">
+    <div class="cadastro-tipo">
+        
+        <div class="form">
+            <div class="cadastro-titulo">
+                <span>Tipo</span>
+            </div>
+            <input type="text" placeholder="Digite...">
+            <input type="submit" value="Salvar">
+        </div> 
+    </div>
+    <br>
     
-    <div class="form">
-        <div class="cadastro-titulo">
-            <span>Tipo</span>
-        </div>
-        <input type="text" placeholder="Digite...">
-        <input type="submit" value="Salvar">
-    </div> 
-</div>
-<br>
-
-<div class="cadastro-produto">
+    <div class="cadastro-produto">
         <div class="cadastro-produto-titulo">
             Cadatrar Produto
         </div>
@@ -22,21 +22,21 @@
             <input type="submit" value="Salvar">
         </form> 
         <div class="lista-tipo">
-
+            
         </div>
         <div class="popup is-theme-bondi-blue">
-                <div class="popup-title">
-                    <div>
-                        <span>Escolha o sabor</span>
-                       
-                    </div>
-                </div>
-                <div class="popup-body">
+            <div class="popup-title">
+                <div>
+                    <span>Escolha o sabor</span>
                     
-                    <div class="body-row" ng-repeat="sabor in sabor">
-                        <div>
-                           <span>{{sabor.sabor}}</span>
-                        </div>
+                </div>
+            </div>
+            <div class="popup-body">
+                
+                <div class="body-row" ng-repeat="sabor in sabor">
+                    <div>
+                        <span>{{sabor.sabor}}</span>
+                    </div>
                     
                 </div>
                 <div class="popup-action">
@@ -45,42 +45,40 @@
                     </div>
                 </div>
             </div>
-        
-    </div>
+            
+        </div>
     </div>
 -->
 <h1 class="main-title">Cadastro</h1>
-<div class="grid-side">
-    <div class="size left-side">
-        
+<div class="flex-side">
+    <div class="size left-side bgcolor-green">
         <a href="">
-            <div class="sizeup-button">
-                Clique em mim
+            <div class="sizeup-button color-green">
+                Sabor
             </div>
         </a>
-        <div class="button-tati">
-                tati
-            </div>
+        <div class="size-title">
+            Sabor
+        </div>
     </div>
-    <div class="size mid-side">
-            
+    <div class="size mid-side bgcolor-blue"> 
         <a href="">
-            <div class="sizeup-button">
-                Clique em mim
+            <div class="sizeup-button color-blue">
+                Tipo
             </div>
         </a>
-        <div class="button-tati">
-                tati
-            </div>
+        <div class="size-title">
+            Tipo
+        </div>
     </div>
-    <div class="size right-side">
+    <div class="size right-side bgcolor-purple">
         <a href="">
-            <div class="sizeup-button">
-                Clique em mim
+            <div class="sizeup-button color-purple">
+                Produto
             </div>
         </a>
-        <div class="button-tati">
-                tati
-            </div>
+        <div class="size-title">
+            Produto
+        </div>
     </div>
 </div>

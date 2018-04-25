@@ -31,8 +31,8 @@ angular.module('app').controller('ProdutoController', ['$scope', '$timeout', '$h
     }
 
     $('.sizeup-button').on('click', function(){
-        $('div:even').removeClass('sizeup');
-        $('div:odd').removeClass('suma');
+        $('.flex-side div').removeClass('sizeup');
+        $('.size .sizeup-button').removeClass('suma');
         $(this).parent().parent().addClass("sizeup");
         $(this).addClass('suma');
     })

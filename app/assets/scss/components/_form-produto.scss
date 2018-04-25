@@ -107,20 +107,39 @@
     color: #2585d3
 }
 
-.grid-side {
+.flex-side {
     display: flex;
     width: 100%;
     flex-grow: 0;
-    .size{
+    .size {
         height: 60vh;
         position: relative;
         flex-grow: 1;
-        .button-tati{
+        .size-title{
             position: absolute;
             top: 0;
-            right: 0;
-            display: hidden;
-        
+            margin: 0 auto;
+            opacity: 0;
+            color: white;
+            text-transform: uppercase;
+        }
+        .sizeup-button {
+            border: .5px solid rgba(0, 0, 0, 0.158);
+            background-color: floralwhite;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            text-transform: uppercase;
+            font-family: $font;
+            font-size: 20px;
+            padding: 5px;
+            width: 100%;
+            bottom: 0;
+            text-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
+            &.suma {
+                display: none;
+            }
         }
     }
     .sizeup-button {
@@ -137,35 +156,16 @@
         width: 100%;
         bottom: 0;
         text-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
-        &.suma{
+        &.suma {
             display: none;
         }
     }
 
-    .left-side {
-        background-color: green;
-        .sizeup-button {
-            color: green;
-        }
-    }
-    .mid-side {
-        background-color: blue;
-        .sizeup-button {
-           color: blue;
-        }
-    }
-    .right-side {
-        background-color: gold;
-        .sizeup-button {
-            color: gold;
-        }
-    }
     .sizeup {
         transition: flex-grow 500ms cubic-bezier(0.160, 1.530, 0.590, 1.395);
-        flex-grow: 6;
-        //height: 100%;
+        flex-grow: 6; //height: 100%;
         /* custom */
-        &.button-tati{
+        &.button-tati {
             display: initial;
             font-size: 50px;
         }
@@ -178,6 +178,6 @@
     }
     .sizeup-button:hover {
         filter: brightness(110%);
-        
     }
 }
+
