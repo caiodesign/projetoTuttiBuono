@@ -1,84 +1,108 @@
-<!--
-    <div class="cadastro-tipo">
+
+        <div class="cadastro-tipo">
+            
+            <div class="form">
+                <div class="cadastro-titulo">
+                    <span>Tipo</span>
+                </div>
+                <input type="text" placeholder="Digite...">
+                <input type="submit" value="Salvar">
+            </div> 
+        </div>
+        <br>
         
-        <div class="form">
-            <div class="cadastro-titulo">
-                <span>Tipo</span>
+        <div class="cadastro-produto">
+            <div class="cadastro-produto-titulo">
+                Cadatrar Produto
             </div>
-            <input type="text" placeholder="Digite...">
-            <input type="submit" value="Salvar">
-        </div> 
-    </div>
-    <br>
-    
-    <div class="cadastro-produto">
-        <div class="cadastro-produto-titulo">
-            Cadatrar Produto
-        </div>
-        <form class="form">
-            <input type="text" placeholder="Selecione...">
-            <input type="text" placeholder="Selecione...">
-            <input type="text" placeholder="Selecione...">
-            <input type="submit" value="Salvar">
-        </form> 
-        <div class="lista-tipo">
-            
-        </div>
-        <div class="popup is-theme-bondi-blue">
-            <div class="popup-title">
-                <div>
-                    <span>Escolha o sabor</span>
-                    
-                </div>
-            </div>
-            <div class="popup-body">
+            <div class="form">
+                <input type="text" placeholder="Escolha...">
+                <input type="submit" value="Salvar">
+            </div> 
+            <div class="lista-tipo">
                 
-                <div class="body-row" ng-repeat="sabor in sabor">
-                    <div>
-                        <span>{{sabor.sabor}}</span>
-                    </div>
-                    
-                </div>
-                <div class="popup-action">
-                    <div class="text-center">
-                        <a href="#" class="button-text is-theme-black">Ver todos os comunicados</a>
-                    </div>
-                </div>
             </div>
-            
+            <div class="popup is-theme-bondi-blue">
+                <div class="popup-title">
+                    <div>
+                        <span>Escolha o sabor</span>
+                        
+                    </div>
+                </div>
+                <div class="popup-body">
+                    
+                    <div class="body-row" ng-repeat="sabor in sabor">
+                        <div>
+                            <span>{{sabor.sabor}}</span>
+                        </div>
+                        
+                    </div>
+                    <div class="popup-action">
+                        <div class="text-center">
+                            <a href="#" class="button-text is-theme-black">Ver todos os comunicados</a>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
         </div>
-    </div>
--->
-<h1 class="main-title">Cadastro</h1>
-<div class="flex-side">
-    <div class="size left-side bgcolor-green">
-        <a href="">
-            <div class="sizeup-button color-green">
+   
+<h1 class="main-title">
+    Cadastro
+</h1>
+<div class="container">
+    <div class="flex-side">
+        <div class="size left-side bgcolor-green">
+            <a href="">
+                <div class="sizeup-button color-green">
+                    Sabor
+                </div>
+            </a>
+            <div class="size-title">
                 Sabor
             </div>
-        </a>
-        <div class="size-title">
-            Sabor
+            <div class="size-form">
+                <div class="size-form">
+                    <div class="form">
+                        <input type="text" placeholder="Tipo..">
+                        <input id="cadastroTipo" type="submit" value="Salvar">
+                    </div>
+                </div>
+            </div>
         </div>
-    </div>
-    <div class="size mid-side bgcolor-blue"> 
-        <a href="">
-            <div class="sizeup-button color-blue">
+        <div class="size mid-side bgcolor-blue">
+            <a href="">
+                <div class="sizeup-button color-blue">
+                    Tipo
+                </div>
+            </a>
+            <div class="size-title">
                 Tipo
             </div>
-        </a>
-        <div class="size-title">
-            Tipo
+            <div class="size-form">
+                <div class="form">
+                    <input type="text" placeholder="Tipo..">
+                    <input id="cadastroTipo" type="submit" value="Salvar">
+                </div>
+            </div>
         </div>
-    </div>
-    <div class="size right-side bgcolor-purple">
-        <a href="">
-            <div class="sizeup-button color-purple">
+        <div class="size right-side bgcolor-purple">
+            <a href="">
+                <div class="sizeup-button color-purple">
+                    Produto
+                </div>
+            </a>
+            <div class="size-title">
                 Produto
             </div>
-        </a>
-        <div class="size-title">
-            Produto
+            <div class="size-form">
+                <div class="size-form">
+                    <div class="form">
+                        <input type="text" placeholder="Tipo..">
+                        <input id="cadastroTipo" type="submit" value="Salvar">
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>

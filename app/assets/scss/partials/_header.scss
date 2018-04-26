@@ -6,7 +6,6 @@
     border-radius: 5px;
     display: flex;
     background-color: #1d67a3;
-    padding: 20px;
     position: relative;
     @media screen and (max-width: $tablet) {
         display: block;
@@ -29,9 +28,9 @@
         font-family: $font;
         color: white;
         text-decoration: none;
-    }
-    .main-menu-navbar-itens-text:hover {
-        color: #42A7EB;
+        &:hover {
+            color: #add1ee;
+        }
     }
     .main-menu-text {
         font-size: 40px;
@@ -39,6 +38,8 @@
         margin-left: 15px;
         color: white;
         height: auto;
+        display: inline-flex;
+        align-items: center;
         @media screen and (max-width: $tablet) {
             text-align: right;
         }

@@ -103,8 +103,10 @@
 }
 
 .main-title {
-    padding: 10px;
-    color: #2585d3
+    padding: 10px 0 0 10px;
+    color: #2585d3;
+    margin: auto;
+    width: 70%;
 }
 
 .flex-side {
@@ -115,13 +117,17 @@
         height: 60vh;
         position: relative;
         flex-grow: 1;
-        .size-title{
-            position: absolute;
+        .size-title {
             top: 0;
-            margin: 0 auto;
+            margin-top: 10px;
             opacity: 0;
             color: white;
             text-transform: uppercase;
+            width: 100%;
+            text-align: center;
+            font-size: 20px;
+            transition: opacity 700ms cubic-bezier(0.250, 0.250, 0.195, 0.885);
+            /* custom */
         }
         .sizeup-button {
             border: .5px solid rgba(0, 0, 0, 0.158);
@@ -141,14 +147,25 @@
                 display: none;
             }
         }
+        .size-form {
+            opacity: 0;
+            margin: 20px auto;
+            width: 80%;
+            height: 70%;
+            background-color: #fffaf0;
+            transition: opacity 700ms cubic-bezier(0.250, 0.250, 0.195, 0.885);
+            padding-top: 15px;
+            .form {
+                text-align: center;
+            }
+        }
     }
     .sizeup-button {
         border: .5px solid rgba(0, 0, 0, 0.158);
         background-color: floralwhite;
         display: flex;
         justify-content: center;
-        align-items: center;
-        position: absolute;
+        align-items: center; // position: absolute;
         text-transform: uppercase;
         font-family: $font;
         font-size: 20px;
@@ -160,14 +177,19 @@
             display: none;
         }
     }
-
     .sizeup {
-        transition: flex-grow 500ms cubic-bezier(0.160, 1.530, 0.590, 1.395);
+        transition: flex-grow 700ms cubic-bezier(0.160, 1.530, 0.590, 1.395);
         flex-grow: 6; //height: 100%;
         /* custom */
         &.button-tati {
             display: initial;
             font-size: 50px;
+        }
+        .size-title {
+            opacity: 100;
+        }
+        .size-form {
+            opacity: 100;
         }
     }
     .sizeup:focus {
@@ -180,4 +202,3 @@
         filter: brightness(110%);
     }
 }
-
