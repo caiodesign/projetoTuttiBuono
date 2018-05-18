@@ -1,7 +1,7 @@
 app.config(['$stateProvider', '$urlRouterProvider', '$locationProvider', function ($stateProvider, $urlRouterProvider, $locationProvider) {
     console.log("1");
 
-    $urlRouterProvider.otherwise('/home');
+    // $urlRouterProvider.otherwise('/home');
     $locationProvider.html5Mode(true).hashPrefix('!')
 
     $stateProvider
@@ -25,5 +25,12 @@ app.config(['$stateProvider', '$urlRouterProvider', '$locationProvider', functio
             'principals/footer', //FOOTER VIEW LOCATION
             'components/post' //MAIN VIEW LOCATION
             
-        ));
+        ))
+        // .state('employees', createRoute(
+        //     'employees', //APP URL
+        //     '', //HEADER VIEW LOCATION
+        //     '', //FOOTER VIEW LOCATION
+        //     '' //MAIN VIEW LOCATION
+            
+        // ))
 }]);

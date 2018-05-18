@@ -30,6 +30,11 @@ angular.module('app').controller('ProdutoController', ['$scope', '$timeout', '$h
         }
     }
 
+    $scope.teste = function(){
+        alert('teta');
+    }
+   
+
     $('.sizeup-button').on('click', function(){
         $('.flex-side div').removeClass('sizeup');
         $('.size .sizeup-button').removeClass('suma');
