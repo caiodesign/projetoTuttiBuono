@@ -23,7 +23,7 @@ function onError(err) {
 
 var config = {
     app: './app',
-    build: './proj',
+    proj: './proj',
 };
 
 config
@@ -38,12 +38,12 @@ config
 
 config
     .dest = {
-        html: config.build + '',
-        js: config.build + '/assets/js',
-        css: config.build + '/assets/css',
-        img: config.build + '/assets/img',
-        fonts: config.build + '/assets/fonts',
-        json: config.build + '/assets/json'
+        html: config.proj + '',
+        js: config.proj + '/assets/js',
+        css: config.proj + '/assets/css',
+        img: config.proj + '/assets/img',
+        fonts: config.proj + '/assets/fonts',
+        json: config.proj + '/assets/json'
     };
 
 var BROWSER_SYNC_RELOAD_DELAY = 500;
@@ -88,7 +88,7 @@ gulp.task('json', function () {
     return gulp.src([
         config.app + '/assets/json/*.json'
     ])
-        .pipe(gulp.dest(config.build + '/assets/json'));
+        .pipe(gulp.dest(config.proj + '/assets/json'));
 });
 
 gulp.task('html', function () {
@@ -111,7 +111,7 @@ gulp.task('js', function () {
         config.app + '/assets/js/functions/*.js',
 
     ])
-        .pipe(gulp.dest(config.build + '/assets/js'));
+        .pipe(gulp.dest(config.proj + '/assets/js'));
 });
 
 gulp.task('js-concat', function () {
@@ -122,7 +122,7 @@ gulp.task('js-concat', function () {
     ])
         .pipe(uglify())
         .on('error', onError)
-        .pipe(gulp.dest(config.build + '/assets/js'));
+        .pipe(gulp.dest(config.proj + '/assets/js'));
 });
 
 
@@ -130,7 +130,7 @@ gulp.task('watch', function () {
     function checkDelete(file) {
         if (file.event === 'unlink' || file.event === 'unlinkDir') {
             var srcPath = path.relative(path.resolve('.'), file.path);
-            var destPath = path.resolve(config.build + '', srcPath);
+            var destPath = path.resolve(config.proj + '', srcPath);
             del.sync(destPath);
         }
     };
@@ -188,7 +188,7 @@ gulp.task('sass', function () {
 
 gulp.task('delete', function () {
     del.sync([
-        config.build + '/*'
+        config.proj + '/*'
     ]);
 });
 
@@ -213,7 +213,7 @@ gulp.task('browser-sync', ['nodemon', 'delete', 'files', 'watch'], function () {
         browser: ['google-chrome']
         
         // server: {
-        //     baseDir: config.build,
+        //     baseDir: config.proj,
         //     middleware: [
         //         historyFallback()
         //     ]
