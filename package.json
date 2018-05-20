@@ -15,10 +15,12 @@
     "gulp-concat": "^2.6.0",
     "gulp-htmlmin": "^3.0.0",
     "gulp-minify-css": "^1.2.4",
+    "gulp-nodemon": "^2.2.1",
     "gulp-plumber": "^1.1.0",
     "gulp-uglify": "^2.0.0",
     "gulp-usemin": "^0.3.25",
-    "gulp-watch": "^4.3.9"
+    "gulp-watch": "^4.3.9",
+    "nodemon": "^1.17.4"
   },
   "dependencies": {
     "compass": "^0.1.1",

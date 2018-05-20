@@ -12,6 +12,8 @@ var path = require('path'),
     htmlmin = require('gulp-htmlmin'),
     historyFallback = require('connect-history-api-fallback'),
     concat = require('gulp-concat');
+    nodemon = require('gulp-nodemon');
+
 
 // Error
 function onError(err) {
@@ -44,6 +46,33 @@ config
         json: config.build + '/assets/json'
     };
 
+var BROWSER_SYNC_RELOAD_DELAY = 500;
+
+gulp.task('nodemon', function (cb) {
+    var called = false;
+    return nodemon({
+    
+        // nodemon our expressjs server
+        script: 'server.js',
+    
+        // watch core server file(s) that require server restart on change
+        watch: ['server.js']
+    })
+        .on('start', function onStart() {
+        // ensure start only got called once
+        if (!called) { cb(); }
+        called = true;
+        })
+        .on('restart', function onRestart() {
+        // reload connected browsers after a slight delay
+        setTimeout(function reload() {
+            browserSync.reload({
+            stream: false
+            });
+        }, BROWSER_SYNC_RELOAD_DELAY);
+    });
+});
+
 gulp.task('fonts', function () {
     return gulp.src(config.src.fonts)
         .pipe(gulp.dest(config.dest.fonts));
@@ -54,19 +83,6 @@ gulp.task('img', function () {
         .pipe(gulp.dest(config.dest.img));
 });
 
-/*gulp.task('js', function () {
-    return gulp.src(config.src.js)
-        .pipe(plumber({
-            errorHandler: function (error) {
-                console.log(error.message);
-                this.emit('end');
-            }
-        }))
-        .pipe(uglify({
-            mangle: false
-        }))
-        .pipe(gulp.dest(config.dest.js));
-});*/
 
 gulp.task('json', function () {
     return gulp.src([
@@ -184,15 +200,29 @@ gulp.task('json-watch', ['json'], browserSync.reload);
 
 gulp.task('files', ['fonts', 'img', 'js', 'js-concat', 'sass', 'html', 'json']);
 
-gulp.task('server', ['delete', 'files', 'watch'], function () {
+gulp.task('browser-sync', ['nodemon', 'delete', 'files', 'watch'], function () {
     browserSync.init({
-        server: {
-            baseDir: config.build,
-            middleware: [
-                historyFallback()
-            ]
-        }
+            // informs browser-sync to proxy our expressjs app which would run at the following location
+        proxy: 'http://localhost:3000',
+
+        // informs browser-sync to use the following port for the proxied app
+        // notice that the default port is 3000, which would clash with our expressjs
+        port: 4000,
+
+        // open the proxied app in chrome
+        browser: ['google-chrome']
+        
+        // server: {
+        //     baseDir: config.build,
+        //     middleware: [
+        //         historyFallback()
+        //     ]
+        // }
     });
 });
 
-gulp.task('default', ['server']);
+gulp.task('default', ['browser-sync'], function(){
+     // gulp.watch('proj/**/*.js',   ['js', browserSync.reload]);
+    // gulp.watch('proj/**/*.css',  ['css']);
+    // gulp.watch('public/**/*.html', ['bs-reload']);
+});

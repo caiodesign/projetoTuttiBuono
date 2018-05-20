@@ -1,7 +1,7 @@
 app.config(['$stateProvider', '$urlRouterProvider', '$locationProvider', function ($stateProvider, $urlRouterProvider, $locationProvider) {
     console.log("1");
 
-    // $urlRouterProvider.otherwise('/home');
+    $urlRouterProvider.otherwise('/home');
     $locationProvider.html5Mode(true).hashPrefix('!')
 
     $stateProvider
