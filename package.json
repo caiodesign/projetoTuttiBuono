@@ -21,6 +21,8 @@
     "gulp-uglify": "^2.0.0",
     "gulp-usemin": "^0.3.25",
     "gulp-watch": "^4.3.9",
+    "ndb": "^0.2.4",
+    "nedb": "^1.8.0",
     "nodemon": "^1.17.4"
   },
   "dependencies": {
